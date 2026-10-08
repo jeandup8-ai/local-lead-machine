@@ -20,6 +20,7 @@ const set = (obj, key, val) => { if (val !== undefined && val !== "" && obj[key]
 if (env.WHATSAPP_NUMBER) set(cfg, "whatsappNumber", digits(env.WHATSAPP_NUMBER).replace(/^0/, "27"));
 set(cfg, "phoneNumber", env.CONTACT_PHONE);
 set(cfg, "email", env.CONTACT_EMAIL);
+set(cfg, "payfastLink", env.PAYFAST_LINK);
 set(cfg, "legalName", env.LEGAL_NAME);
 set(cfg.pricing, "founding", env.PRICE_FOUNDING);
 set(cfg.pricing, "standard", env.PRICE_STANDARD);

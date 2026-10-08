@@ -19,6 +19,10 @@ window.LLM_CONFIG = {
   // Where people can email you, and the fallback if a form can't be submitted.
   email: "",
 
+  // Your PayFast payment link for the founding offer (PayFast dashboard → Payment links).
+  // Must start with https:// and be a payfast.co.za or payf.st address. Empty = Pay buttons hidden.
+  payfastLink: "",
+
   pricing: {
     founding: "R990",
     standard: "R2,490",

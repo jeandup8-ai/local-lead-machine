@@ -222,6 +222,7 @@
       store("llm_sales_vars", v);
       v["Audit link"] = origin() + "/audit/";
       v.Price = C.pricing.founding;
+      v["Payment link"] = LLM.payfast || "[Payment link — not set yet]";
       document.querySelectorAll("pre[data-tpl]").forEach(function (pre) {
         pre.textContent = pre.getAttribute("data-tpl").replace(/\[([^\]]+)\]/g, function (m, k) { return v[k] || m; });
       });

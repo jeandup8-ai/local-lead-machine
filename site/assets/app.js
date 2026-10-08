@@ -52,6 +52,14 @@
   document.querySelectorAll("[data-email]").forEach(function (el) {
     if (C.email) { el.href = "mailto:" + C.email; if (!el.children.length) el.textContent = C.email; el.hidden = false; } else el.hidden = true;
   });
+  // PayFast payment link: elements with data-payfast stay hidden unless a valid link is configured
+  var pf = String(C.payfastLink || "").trim();
+  var pfOk = /^https:\/\/([a-z0-9-]+\.)*(payfast\.co\.za|payf\.st)(\/|$)/i.test(pf);
+  LLM.payfast = pfOk ? pf : "";
+  document.querySelectorAll("[data-payfast]").forEach(function (el) {
+    if (pfOk) { if (el.tagName === "A") { el.href = pf; el.target = "_blank"; el.rel = "noopener noreferrer"; } el.hidden = false; }
+    else el.hidden = true;
+  });
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
   // 4. Forms posted to Netlify Forms with graceful fallback
@@ -61,6 +69,11 @@
   LLM.submitNetlify = function (data) {
     return fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: LLM.encode(data) })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return true; });
+  };
+  LLM.leadMessage = function (d) {
+    var lines = ["Hi, I just sent an enquiry on the Local Lead Machine website" + (d.plan === "founding" ? " for the " + ((C.pricing || {}).founding || "") + " founding offer" : "") + "."];
+    [["Name", d.name], ["Business", d.business], ["City", d.city], ["Website", d.website], ["Email", d.email], ["Message", d.need]].forEach(function (x) { if (x[1]) lines.push(x[0] + ": " + x[1]); });
+    return lines.join("\n");
   };
   LLM.validate = function (form) {
     var ok = true;
@@ -109,7 +122,9 @@
       LLM.submitNetlify(data).then(function () {
         form.reset();
         status.className = "alert alert-ok";
-        status.innerHTML = "Thanks — we've got your details. We'll be in touch within one business day." + (LLM.hasWhatsApp() ? ' Want a faster answer? <a href="' + LLM.waLink(fill((C.messages || {}).default)) + '" target="_blank" rel="noopener noreferrer">WhatsApp us</a>.' : "");
+        var wa = LLM.waLink(LLM.leadMessage(data));
+        status.innerHTML = "Thanks — your details are saved." + (wa ? ' <b>Last step:</b> send them to us on WhatsApp so we can reply quickly.<br><a class="btn btn-wa btn-block" style="margin-top:10px" href="' + wa + '">Send on WhatsApp</a>' : " We'll be in touch within one business day.");
+        if (wa) setTimeout(function () { location.href = wa; }, 1800);
       }).catch(function () {
         var m = LLM.mailtoFallback("Local Lead Machine enquiry", data);
         var w = LLM.waLink("Hi, I'm " + (data.name || "") + " from " + (data.business || "") + ". " + (data.need || "I'd like help with my online enquiries."));
