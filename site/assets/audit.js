@@ -90,7 +90,7 @@
     h += '<div class="offer-box"><h3>Fix these leaks — ' + esc(C.pricing.founding) + ' founding offer</h3><p>We build your conversion page with tap-to-call, WhatsApp, your services, your areas and a quote button — usually within 24 hours of getting your details. Founding price is for the first ' + esc(C.pricing.foundingSlots) + " paying businesses only.</p>";
     h += '<div class="btn-row no-print"><a class="btn btn-primary" href="/get-started/?plan=founding&amp;ref=audit">Fix these leaks — ' + esc(C.pricing.founding) + "</a>";
     h += wa ? '<a class="btn btn-wa" href="' + esc(wa) + '" target="_blank" rel="noopener noreferrer">WhatsApp us your audit</a>' : '<a class="btn btn-wa" href="/contact/?via=whatsapp">WhatsApp us your audit</a>';
-    if (LLM.payfast) h += '<a class="btn btn-ghost" href="' + esc(LLM.payfast) + '" target="_blank" rel="noopener noreferrer">Pay ' + esc(C.pricing.founding) + ' securely (PayFast)</a>';
+    if (LLM.payfast) h += '<a class="btn btn-ghost" href="' + esc(LLM.payfast) + '"' + (LLM.payfast.charAt(0) === "/" ? "" : ' target="_blank" rel="noopener noreferrer"') + '>Pay ' + esc(C.pricing.founding) + ' securely (PayFast)</a>';
     if (phone) h += '<a class="btn btn-ghost" href="tel:' + esc(phone.replace(/[^\d+]/g, "")) + '">Call us</a>';
     h += '<button class="btn btn-ghost" type="button" onclick="window.print()">Save as PDF / print</button></div>';
     h += '<p style="font-size:.88rem;margin:14px 0 0">WhatsApp us your audit and we\'ll explain it — no obligation.</p></div>';

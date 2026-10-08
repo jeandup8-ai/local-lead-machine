@@ -19,9 +19,10 @@ window.LLM_CONFIG = {
   // Where people can email you, and the fallback if a form can't be submitted.
   email: "",
 
-  // Your PayFast payment link for the founding offer (PayFast dashboard → Payment links).
-  // Must start with https:// and be a payfast.co.za or payf.st address. Empty = Pay buttons hidden.
-  payfastLink: "",
+  // Where "Pay" buttons go. "/pay/" = the on-site PayFast page (site/pay/index.html, R990 founding offer).
+  // Can also be a PayFast payment link (https://payf.st/...). Empty = Pay buttons hidden.
+  // If you change the founding price, also change the amount in site/pay/index.html.
+  payfastLink: "/pay/",
 
   pricing: {
     founding: "R990",
@@ -34,6 +35,7 @@ window.LLM_CONFIG = {
     default: "Hi, I'd like to get a free Local Lead Machine audit.",
     electricians: "Hi, I'm an electrician and I'd like a free Local Lead Machine audit.",
     pricing: "Hi, I'm interested in the {founding} founding offer from Local Lead Machine.",
+    paid: "Hi, I've just paid for the Local Lead Machine founding offer. Here are my business details:",
     audit: "Hi, I run {business}. I saw my Local Lead Machine audit (score {score}/100) and would like to discuss fixing the issues."
   }
 };

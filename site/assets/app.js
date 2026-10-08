@@ -54,10 +54,10 @@
   });
   // PayFast payment link: elements with data-payfast stay hidden unless a valid link is configured
   var pf = String(C.payfastLink || "").trim();
-  var pfOk = /^https:\/\/([a-z0-9-]+\.)*(payfast\.co\.za|payf\.st)(\/|$)/i.test(pf);
+  var pfOk = /^\/pay\/?$/.test(pf) || /^https:\/\/([a-z0-9-]+\.)*(payfast\.co\.za|payfast\.io|payf\.st)(\/|$)/i.test(pf);
   LLM.payfast = pfOk ? pf : "";
   document.querySelectorAll("[data-payfast]").forEach(function (el) {
-    if (pfOk) { if (el.tagName === "A") { el.href = pf; el.target = "_blank"; el.rel = "noopener noreferrer"; } el.hidden = false; }
+    if (pfOk) { if (el.tagName === "A") { el.href = pf; if (pf.charAt(0) !== "/") { el.target = "_blank"; el.rel = "noopener noreferrer"; } } el.hidden = false; }
     else el.hidden = true;
   });
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
