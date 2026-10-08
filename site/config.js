@@ -11,7 +11,7 @@ window.LLM_CONFIG = {
 
   // Digits only, international format, no + or spaces. Example: "27821234567"
   // Leave empty until you have your real number — WhatsApp buttons then fall back to the contact form.
-  whatsappNumber: "",
+  whatsappNumber: "27813932430",
 
   // Shown on "Call" buttons. Example: "+27821234567". Leave empty to hide Call buttons.
   phoneNumber: "",
