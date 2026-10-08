@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Prospect audit | LLM internal</title>
+<meta name="description" content="Internal tool.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0A1020">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Local Lead Machine">
+<meta property="og:title" content="Prospect audit | LLM internal">
+<meta property="og:description" content="Internal tool.">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Local Lead Machine home"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="#04121a" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span>Local Lead Machine</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/electricians/">Electricians</a>
+      <a href="/demo/sparkpro/">See a demo</a>
+      <a href="/#pricing">Pricing</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-primary btn-sm" href="/audit/">Free audit</a></div>
+  </div>
+</header>
+<main id="main"><div class="internal-bar">Internal tool · not linked publicly · data stays on this device</div><div class="wrap"><nav class="tool-nav" aria-label="Tools"><a href="/launch/" class="">Launch</a><a href="/prospect/" class="on">Prospect audit</a><a href="/tracker/" class="">Tracker</a><a href="/sales/" class="">Scripts</a></nav></div><section class="section" style="padding-top:12px"><div class="wrap narrow">
+<h1 style="font-size:2rem">Prospect audit</h1>
+<p class="lead">Check a prospect before you message them. Only what you verify goes into the message.</p>
+<form class="panel form" id="p-form" novalidate data-page="prospect">
+  <div class="form-grid">
+    <div class="field"><label for="p-name">Business name</label><input id="p-name" required maxlength="120"><div class="errmsg">Required.</div></div>
+    <div class="field"><label for="p-contact">Contact person <span class="opt">(if known)</span></label><input id="p-contact" maxlength="80"></div>
+    <div class="field"><label for="p-site">Website <span class="opt">(blank = none found)</span></label><input id="p-site" data-url inputmode="url" autocapitalize="off" maxlength="200"><div class="errmsg">Check the address.</div></div>
+    <div class="field"><label for="p-city">Location</label><input id="p-city" maxlength="80" placeholder="e.g. Pretoria East"></div>
+    <div class="field"><label for="p-phone">Phone</label><input id="p-phone" type="tel" maxlength="20"></div>
+    <div class="field"><label for="p-wa">WhatsApp</label><input id="p-wa" type="tel" maxlength="20"></div>
+  </div>
+  <div class="field"><label for="p-gbp">Google profile URL</label><input id="p-gbp" data-url inputmode="url" autocapitalize="off" maxlength="400"><div class="errmsg">Check the link.</div></div>
+  <fieldset style="border:1px solid var(--line);border-radius:12px;padding:14px">
+    <legend style="font-weight:800;padding:0 6px">Google profile — what you checked yourself</legend>
+    <div class="form-grid" style="margin-bottom:10px">
+      <div class="field"><label for="p-rating">Rating</label><input id="p-rating" inputmode="decimal" maxlength="3" placeholder="e.g. 4.7"></div>
+      <div class="field"><label for="p-reviews">Number of reviews</label><input id="p-reviews" inputmode="numeric" maxlength="5" placeholder="e.g. 38"></div>
+    </div>
+    <div class="manual-grid" id="p-manual"></div>
+  </fieldset>
+  <div class="field"><label for="p-notes">Notes</label><textarea id="p-notes" maxlength="1500" placeholder="Anything you noticed: old number on profile, no photos, slow to reply…"></textarea></div>
+  <button class="btn btn-primary btn-block" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>Check website &amp; build pitch</button>
+  <div id="p-status" role="status" aria-live="polite" hidden></div>
+</form>
+<div id="p-out" class="report" hidden style="margin-top:20px"></div>
+</div></section></main>
+<script src="/config.js"></script>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/scoring.js" defer></script>
+<script src="/assets/internal.js" defer></script>
+</body></html>

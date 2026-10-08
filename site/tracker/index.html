@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Prospect tracker | LLM internal</title>
+<meta name="description" content="Internal tool.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0A1020">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Local Lead Machine">
+<meta property="og:title" content="Prospect tracker | LLM internal">
+<meta property="og:description" content="Internal tool.">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Local Lead Machine home"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="#04121a" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span>Local Lead Machine</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/electricians/">Electricians</a>
+      <a href="/demo/sparkpro/">See a demo</a>
+      <a href="/#pricing">Pricing</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-primary btn-sm" href="/audit/">Free audit</a></div>
+  </div>
+</header>
+<main id="main"><div class="internal-bar">Internal tool · not linked publicly · data stays on this device</div><div class="wrap"><nav class="tool-nav" aria-label="Tools"><a href="/launch/" class="">Launch</a><a href="/prospect/" class="">Prospect audit</a><a href="/tracker/" class="on">Tracker</a><a href="/sales/" class="">Scripts</a></nav></div><section class="section" style="padding-top:12px"><div class="wrap">
+<h1 style="font-size:2rem">Prospect tracker</h1>
+<div class="kpis" id="t-kpis" style="margin-bottom:16px"></div>
+<div class="toolbar" style="margin-bottom:14px">
+  <button class="btn btn-primary btn-sm" id="t-add">+ Add prospect</button>
+  <select id="t-filter" aria-label="Filter by status"><option value="">All statuses</option><option value="DUE">Follow-up due</option><option value="NEW">New</option><option value="CONTACTED">Contacted</option><option value="REPLIED">Replied</option><option value="AUDIT SENT">Audit Sent</option><option value="INTERESTED">Interested</option><option value="QUOTE SENT">Quote Sent</option><option value="WON">Won</option><option value="LOST">Lost</option><option value="FOLLOW UP">Follow Up</option></select>
+  <input id="t-search" type="search" placeholder="Search…" aria-label="Search prospects">
+  <button class="btn btn-line btn-sm" id="t-export">Export CSV</button>
+  <label class="btn btn-line btn-sm" style="cursor:pointer">Import CSV<input type="file" id="t-import" accept=".csv,text/csv" hidden></label>
+</div>
+<div id="t-list" class="grid grid-3"></div>
+<p class="notice" style="margin-top:16px">Saved in this browser only. Export a CSV regularly as a backup — clearing browser data deletes it.</p>
+</div></section>
+<dialog id="t-dlg" style="border:0;border-radius:18px;padding:0;width:min(560px,calc(100% - 20px));max-height:92vh">
+<form id="t-form" class="form" method="dialog" style="padding:22px">
+  <h2 style="font-size:1.4rem" id="t-dlg-title">Prospect</h2>
+  <input type="hidden" id="tf-id">
+  <div class="form-grid">
+    <div class="field"><label for="tf-business">Business</label><input id="tf-business" required maxlength="120"><div class="errmsg">Required.</div></div>
+    <div class="field"><label for="tf-contact">Contact</label><input id="tf-contact" maxlength="80"></div>
+    <div class="field"><label for="tf-phone">Phone</label><input id="tf-phone" type="tel" maxlength="20"></div>
+    <div class="field"><label for="tf-whatsapp">WhatsApp</label><input id="tf-whatsapp" type="tel" maxlength="20"></div>
+    <div class="field"><label for="tf-website">Website</label><input id="tf-website" maxlength="200"></div>
+    <div class="field"><label for="tf-city">City</label><input id="tf-city" maxlength="80"></div>
+    <div class="field"><label for="tf-status">Status</label><select id="tf-status"><option value="NEW">New</option><option value="CONTACTED">Contacted</option><option value="REPLIED">Replied</option><option value="AUDIT SENT">Audit Sent</option><option value="INTERESTED">Interested</option><option value="QUOTE SENT">Quote Sent</option><option value="WON">Won</option><option value="LOST">Lost</option><option value="FOLLOW UP">Follow Up</option></select></div>
+    <div class="field"><label for="tf-source">Source</label><input id="tf-source" maxlength="80" placeholder="e.g. Google Maps"></div>
+    <div class="field"><label for="tf-contacted">Date contacted</label><input id="tf-contacted" type="date"></div>
+    <div class="field"><label for="tf-followup">Next follow-up</label><input id="tf-followup" type="date"></div>
+    <div class="field"><label for="tf-value">Value (R)</label><input id="tf-value" inputmode="numeric" maxlength="8"></div>
+  </div>
+  <div class="field"><label for="tf-notes">Notes</label><textarea id="tf-notes" maxlength="2000"></textarea></div>
+  <div class="btn-row"><button class="btn btn-primary" type="submit" value="save">Save</button><button class="btn btn-line" type="button" id="tf-cancel">Cancel</button><button class="btn btn-line" type="button" id="tf-delete" style="color:var(--bad)">Delete</button></div>
+</form></dialog></main>
+<script src="/config.js"></script>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/scoring.js" defer></script>
+<script src="/assets/internal.js" defer></script>
+</body></html>

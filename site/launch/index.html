@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Launch dashboard | LLM internal</title>
+<meta name="description" content="Internal tool.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0A1020">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Local Lead Machine">
+<meta property="og:title" content="Launch dashboard | LLM internal">
+<meta property="og:description" content="Internal tool.">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Local Lead Machine home"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="#04121a" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span>Local Lead Machine</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/electricians/">Electricians</a>
+      <a href="/demo/sparkpro/">See a demo</a>
+      <a href="/#pricing">Pricing</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-primary btn-sm" href="/audit/">Free audit</a></div>
+  </div>
+</header>
+<main id="main"><div class="internal-bar">Internal tool · not linked publicly · data stays on this device</div><div class="wrap"><nav class="tool-nav" aria-label="Tools"><a href="/launch/" class="on">Launch</a><a href="/prospect/" class="">Prospect audit</a><a href="/tracker/" class="">Tracker</a><a href="/sales/" class="">Scripts</a></nav></div><section class="section" style="padding-top:12px"><div class="wrap">
+<h1 style="font-size:2rem">Launch dashboard</h1>
+<div class="card" style="background:var(--ink);color:#fff;border:0;margin-bottom:16px"><span class="eyebrow" style="color:var(--accent)">Today's objective</span><h2 style="color:#fff;margin:0">Find 50 qualified electricians.</h2><p style="color:#AEB8CC;margin:8px 0 0">Qualified = real business, 4.0+ rating, 10+ reviews, weak or no website. Targets, not guarantees.</p></div>
+<div class="kpis" id="l-kpis" style="margin-bottom:22px"></div>
+<div class="split" style="align-items:start">
+  <div><h2 style="font-size:1.4rem">Pipeline checklist</h2><p class="notice">The steps for each deal. Reset tomorrow.</p><div class="grid" id="l-tasks"><label class="task"><input type="checkbox" data-task="0"> Find prospect</label><label class="task"><input type="checkbox" data-task="1"> Check Google presence</label><label class="task"><input type="checkbox" data-task="2"> Check website</label><label class="task"><input type="checkbox" data-task="3"> Run audit</label><label class="task"><input type="checkbox" data-task="4"> Send personalised message</label><label class="task"><input type="checkbox" data-task="5"> Follow up</label><label class="task"><input type="checkbox" data-task="6"> Send audit</label><label class="task"><input type="checkbox" data-task="7"> Quote founding price</label><label class="task"><input type="checkbox" data-task="8"> Close</label><label class="task"><input type="checkbox" data-task="9"> Collect payment</label><label class="task"><input type="checkbox" data-task="10"> Collect business assets</label><label class="task"><input type="checkbox" data-task="11"> Build</label><label class="task"><input type="checkbox" data-task="12"> Launch</label><label class="task"><input type="checkbox" data-task="13"> Ask for testimonial</label></div>
+    <button class="btn btn-line btn-sm" id="l-reset" style="margin-top:12px">Reset today</button></div>
+  <div>
+    <h2 style="font-size:1.4rem">How to find 50 prospects</h2>
+    <ol class="mini-list" style="font-size:1rem">
+      <li>Google Maps: search “electrician Pretoria East” (then Centurion, Midrand, Randburg, Boksburg…).</li>
+      <li>Open each listing. Keep it if: <b>4.0+ rating, 10+ reviews</b>, real phone number.</li>
+      <li>Shortlist if: <b>no website</b>, old/broken website, or no WhatsApp/quote button.</li>
+      <li>Run each through <a href="/prospect/">Prospect audit</a> → save to tracker.</li>
+      <li>Message 1-by-1 using the <a href="/sales/">scripts</a>. Follow up after 2–3 days.</li>
+    </ol>
+    <div class="script" style="margin-top:16px"><h3>Opening message<button class="btn btn-line btn-sm" data-copy="#l-open">Copy</button></h3><pre id="l-open">Hi [Name], I found [Business] while looking for local electricians. I noticed a few things in your online customer journey that may be making it harder for people to contact you. I'm doing a small launch for local businesses and offering a free 5-minute audit. No obligation. Would you like me to send it?</pre></div>
+    <div class="script" style="margin-top:12px"><h3>Audit link message<button class="btn btn-line btn-sm" data-copy="#l-link">Copy</button></h3><pre id="l-link">I found your business on Google and noticed a few things in your online customer journey. I built a free audit system to identify where local customers may be dropping off. Here's the link: <span data-origin></span>/audit/</pre></div>
+    <p style="margin-top:12px"><a href="/sales/">All scripts →</a></p>
+  </div>
+</div>
+</div></section></main>
+<script src="/config.js"></script>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/scoring.js" defer></script>
+<script src="/assets/internal.js" defer></script>
+</body></html>

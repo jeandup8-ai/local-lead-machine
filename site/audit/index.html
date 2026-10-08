@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Free online customer-journey audit for local businesses | Local Lead Machine</title>
+<meta name="description" content="Free 5-minute audit: we check your website for tap-to-call, WhatsApp, services, service areas, trust signals and quote buttons — and explain every point of your score.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0A1020">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Local Lead Machine">
+<meta property="og:title" content="Free online customer-journey audit for local businesses | Local Lead Machine">
+<meta property="og:description" content="Free 5-minute audit: we check your website for tap-to-call, WhatsApp, services, service areas, trust signals and quote buttons — and explain every point of your score.">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="__SITE_URL__/audit/">
+<meta property="og:url" content="__SITE_URL__/audit/">
+<meta property="og:image" content="__SITE_URL__/assets/og.png">
+<meta name="twitter:image" content="__SITE_URL__/assets/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Local Lead Machine home"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="#04121a" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span>Local Lead Machine</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/electricians/">Electricians</a>
+      <a href="/demo/sparkpro/">See a demo</a>
+      <a href="/#pricing">Pricing</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-primary btn-sm" href="/audit/">Free audit</a></div>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero no-print">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--accent)">Free preliminary audit</span>
+    <h1>Where are local customers dropping off?</h1>
+    <p>Enter your details. We'll check your website automatically and show what's working, what's leaking and what to fix first. Takes about 5 minutes.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:28px">
+  <div class="wrap narrow">
+    <div class="panel no-print" id="audit-panel">
+      <form class="form" id="audit-form" name="audit" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="audit">
+        <input type="hidden" name="score" value="">
+        <input type="hidden" name="summary" value="">
+        <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="field"><label for="a-name">Business name</label><input id="a-name" name="business" autocomplete="organization" maxlength="120" placeholder="e.g. Ndlovu Electrical"></div>
+        <div class="field"><label for="a-site">Website address</label><input id="a-site" name="website" data-url inputmode="url" autocapitalize="off" maxlength="200" placeholder="e.g. ndlovuelectrical.co.za"><div class="errmsg">That doesn't look like a website address.</div>
+          <label class="check" style="margin-top:10px"><input type="checkbox" id="a-nosite" name="no_website" value="yes"> <span>I don't have a website</span></label></div>
+        <div class="field"><label for="a-gbp">Google Business Profile link <span class="opt">(optional)</span></label><input id="a-gbp" name="google_profile" data-url inputmode="url" autocapitalize="off" maxlength="400" placeholder="Paste the link from Google Maps → Share"><div class="hint">We can't read Google data automatically — a person checks this and we'll mark it “needs manual verification”.</div><div class="errmsg">That doesn't look like a link.</div></div>
+        <div class="form-grid">
+          <div class="field"><label for="a-city">City / area</label><input id="a-city" name="city" maxlength="80" placeholder="e.g. Pretoria"></div>
+          <div class="field"><label for="a-phone">Phone <span class="opt">(optional)</span></label><input id="a-phone" name="phone" type="tel" inputmode="tel" maxlength="20"><div class="errmsg">Please check this number.</div></div>
+          <div class="field"><label for="a-wa">WhatsApp <span class="opt">(optional)</span></label><input id="a-wa" name="whatsapp" type="tel" inputmode="tel" maxlength="20"><div class="errmsg">Please check this number.</div></div>
+          <div class="field"><label for="a-email">Email <span class="opt">(optional)</span></label><input id="a-email" name="email" type="email" autocomplete="email" maxlength="120"><div class="errmsg">Please check your email.</div></div>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" id="a-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>Run my free audit</button>
+        <p class="notice">When you run the audit, the details you enter and your result are sent to Local Lead Machine so we can explain it and follow up. Only fill in what you're happy to share. <a href="/privacy/">Privacy notice</a>.</p>
+        <div id="a-status" role="status" aria-live="polite" hidden></div>
+      </form>
+    </div>
+    <div id="report" class="report" hidden tabindex="-1"></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="#04121a" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span>Local Lead Machine</span></a>
+        <p style="margin-top:14px;max-width:380px">We find the holes between a Google search and a customer enquiry — and fix them. Built for South African local service businesses.</p>
+      </div>
+      <div><h4>Service</h4><ul>
+        <li><a href="/audit/">Free audit</a></li>
+        <li><a href="/electricians/">For electricians</a></li>
+        <li><a href="/demo/sparkpro/">Demo page</a></li>
+        <li><a href="/get-started/?plan=founding">Get started</a></li>
+      </ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a data-wa="default" href="/contact/">WhatsApp</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom"><span>© <span data-year>2026</span> <span data-cfg="legalName">Local Lead Machine</span></span><span>No fake reviews. No ranking guarantees. Just a better path to “contact us”.</span></div>
+  </div>
+</footer>
+<div class="mbar no-print" role="region" aria-label="Quick contact">
+  <a class="btn btn-wa" data-wa="default" href="/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.6 1.9 3.6 4.4 4.6l1-1.1 1.8.8-.4 1.6c-3.6.4-7.6-3.4-7.2-6.9L10 8l.8 1.7z"/></svg>WhatsApp</a>
+  <a class="btn btn-ghost" data-call hidden href="/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+  <a class="btn btn-primary" data-call-fallback href="/audit/">Free audit</a>
+</div>
+<script src="/config.js"></script>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/scoring.js" defer></script>
+<script src="/assets/audit.js" defer></script>
+</body>
+</html>
