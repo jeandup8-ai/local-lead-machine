@@ -1,0 +1,14 @@
+[
+  {"id":"aaaa1111bbbb2222cccc3333","created_at":"2026-10-08T12:00:00Z","data":{
+    "business":"Ndlovu Electrical <script>alert(1)</script>","contact":"Thabo","trade":"Electrician","city":"Centurion",
+    "phone":"082 123 4567","whatsapp":"0821234567","email":"thabo@example.com","show_email":"yes","hours":"Mon–Fri 7am–5pm, Sat 8am–1pm",
+    "emergency":"yes","services":"Fault finding — tripping and dead circuits\nDB board upgrades\nCoC inspections\nEmergency call-outs\nGeysers — installs and repairs",
+    "areas":"Centurion, Irene, Midstream, Olympus, Faerie Glen","about":"Family business with 12 years in the trade. Written quote before we start, and we clean up after every job.",
+    "credentials":"Registered electrical contractor","google_profile":"https://maps.app.goo.gl/abc123","consent":"yes",
+    "logo":"fixture:tests/fixtures/logo.jpg","photo1":"fixture:tests/fixtures/photo1.jpg","photo2":"fixture:tests/fixtures/photo2.jpg"}},
+  {"id":"dddd4444eeee5555ffff6666","created_at":"2026-10-08T13:00:00Z","data":{
+    "business":"Clearflow Plumbing","contact":"Anne","trade":"Plumber","city":"Pretoria East","phone":"0712345678","whatsapp":"",
+    "hours":"Mon–Sat 7am–6pm","services":"Burst pipes\nGeyser replacements\nBlocked drains","areas":"Faerie Glen, Moreleta Park",
+    "google_profile":"https://evil.example.com/phish","consent":"yes"}},
+  {"id":"nocon777","data":{"business":"No Consent Co","consent":""}}
+]

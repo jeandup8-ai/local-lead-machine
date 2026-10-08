@@ -1,6 +1,6 @@
 [build]
   publish = "site"
-  command = "node scripts/build-config.mjs"
+  command = "node scripts/build-config.mjs && node scripts/build-customers.mjs"
   functions = "netlify/functions"
 
 [build.environment]
@@ -35,5 +35,14 @@
     X-Robots-Tag = "noindex, nofollow"
 [[headers]]
   for = "/launch/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+[[headers]]
+  for = "/c/draft-*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-store"
+[[headers]]
+  for = "/onboard/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"

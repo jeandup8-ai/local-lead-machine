@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Your business details | Local Lead Machine</title>
+<meta name="description" content="Tell us about your business so we can build your page.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0A1020">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Local Lead Machine">
+<meta property="og:title" content="Your business details | Local Lead Machine">
+<meta property="og:description" content="Tell us about your business so we can build your page.">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Local Lead Machine home"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="#04121a" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span>Local Lead Machine</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/electricians/">Electricians</a>
+      <a href="/demo/sparkpro/">See a demo</a>
+      <a href="/#pricing">Pricing</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-primary btn-sm" href="/audit/">Free audit</a></div>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="wrap">
+  <span class="eyebrow" style="color:var(--accent)">Your page</span>
+  <h1>Tell us about your business</h1>
+  <p>This is what goes on your page. Write it the way you'd explain it to a customer. Only include things that are true — we never add fake reviews or qualifications.</p>
+</div></section>
+<section class="section" style="padding-top:28px"><div class="wrap narrow"><div class="panel">
+<form class="form" id="onboard-form" name="intake" method="POST" action="/thanks/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+  <input type="hidden" name="form-name" value="intake">
+  <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+  <h2 style="font-size:1.2rem">1. Your business</h2>
+  <div class="form-grid">
+    <div class="field"><label for="o-business">Business name</label><input id="o-business" name="business" required maxlength="80" autocomplete="organization"><div class="errmsg">Please check this.</div></div>
+    <div class="field"><label for="o-contact">Your name</label><input id="o-contact" name="contact" required maxlength="80" autocomplete="name"><div class="errmsg">Please check this.</div></div>
+    <div class="field"><label for="o-trade">Trade</label><select id="o-trade" name="trade" required><option value="">Choose…</option><option>Electrician</option><option>Plumber</option><option>Handyman</option><option>Painter</option><option>Builder</option><option>Landscaper</option><option>Pest control</option><option>Other</option></select><div class="errmsg">Please check this.</div></div>
+    <div class="field"><label for="o-city">Main town / city</label><input id="o-city" name="city" required maxlength="60" placeholder="e.g. Pretoria East"><div class="errmsg">Please check this.</div></div>
+  </div>
+  <h2 style="font-size:1.2rem;margin-top:10px">2. How customers reach you</h2>
+  <div class="form-grid">
+    <div class="field"><label for="o-phone">Phone number for calls</label><input id="o-phone" name="phone" type="tel" inputmode="tel" required maxlength="20"><div class="errmsg">Please check this.</div></div>
+    <div class="field"><label for="o-wa">WhatsApp number</label><input id="o-wa" name="whatsapp" type="tel" inputmode="tel" required maxlength="20"><div class="hint">Customers' WhatsApp messages will go here.</div><div class="errmsg">Please check this.</div></div>
+    <div class="field"><label for="o-email">Email <span class="opt">(optional)</span></label><input id="o-email" name="email" type="email" maxlength="120" autocomplete="email"><div class="hint">Only used by us — not shown on your page unless you say so below.</div><div class="errmsg">Please check this.</div></div>
+    <div class="field"><label for="o-hours">Working hours</label><input id="o-hours" name="hours" required maxlength="100" placeholder="e.g. Mon–Fri 7am–5pm, Sat 8am–1pm"><div class="errmsg">Please check this.</div></div>
+  </div>
+  <label class="check"><input type="checkbox" name="emergency" value="yes"> <span>I do emergency / after-hours call-outs</span></label>
+  <label class="check"><input type="checkbox" name="show_email" value="yes"> <span>Show my email address on my page</span></label>
+  <h2 style="font-size:1.2rem;margin-top:10px">3. What you do and where</h2>
+  <div class="field"><label for="o-services">Services you offer (one per line)</label><textarea id="o-services" name="services" required maxlength="1500" placeholder="Fault finding&#10;DB board upgrades&#10;CoC inspections&#10;Emergency call-outs"></textarea><div class="hint">Only list what you actually do. Add a short note after a dash if you like: “Geysers — installs and repairs”.</div><div class="errmsg">Please check this.</div></div>
+  <div class="field"><label for="o-areas">Areas you cover (comma separated)</label><textarea id="o-areas" name="areas" required maxlength="600" style="min-height:80px" placeholder="Centurion, Irene, Midstream, Olympus, Faerie Glen"></textarea><div class="errmsg">Please check this.</div></div>
+  <div class="field"><label for="o-about">A few sentences about you <span class="opt">(optional)</span></label><textarea id="o-about" name="about" maxlength="700" placeholder="e.g. Family business, 12 years in the trade, we clean up after every job and give a written quote before starting."></textarea><div class="errmsg">Please check this.</div></div>
+  <div class="field"><label for="o-creds">Registrations / qualifications <span class="opt">(optional)</span></label><input id="o-creds" name="credentials" maxlength="200" placeholder="e.g. Registered electrical contractor — reg no. 12345"><div class="hint">Only real ones — customers may check.</div><div class="errmsg">Please check this.</div></div>
+  <div class="field"><label for="o-gbp">Google Business Profile link <span class="opt">(optional)</span></label><input id="o-gbp" name="google_profile" data-url inputmode="url" autocapitalize="off" maxlength="400" placeholder="Google Maps → your business → Share → Copy link"><div class="hint">We link your page to your real Google reviews.</div><div class="errmsg">Please check this.</div></div>
+  <h2 style="font-size:1.2rem;margin-top:10px">4. Logo and photos</h2>
+  <div class="field"><label for="o-logo">Logo <span class="opt">(optional)</span></label><input id="o-logo" name="logo" type="file" accept="image/*"><div class="errmsg">Please check this.</div></div>
+  <div class="field"><label for="o-photos">Photos of your work (up to 4) <span class="opt">(optional)</span></label><input id="o-photos" type="file" accept="image/*" multiple><input type="file" name="photo1" hidden><input type="file" name="photo2" hidden><input type="file" name="photo3" hidden><input type="file" name="photo4" hidden><div class="hint">Real jobs you did look far better than stock photos. We shrink them automatically.</div><div class="errmsg">Please check this.</div></div>
+  <label class="check"><input type="checkbox" name="consent" value="yes" required> <span>Everything above is true, I have the right to use these photos and logo, and Local Lead Machine may publish this information on my page.</span></label>
+  <button class="btn btn-primary btn-block" type="submit">Send my details</button>
+  <div id="o-status" role="status" aria-live="polite" hidden></div>
+</form>
+</div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="#04121a" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span>Local Lead Machine</span></a>
+        <p style="margin-top:14px;max-width:380px">We find the holes between a Google search and a customer enquiry — and fix them. Built for South African local service businesses.</p>
+      </div>
+      <div><h4>Service</h4><ul>
+        <li><a href="/audit/">Free audit</a></li>
+        <li><a href="/electricians/">For electricians</a></li>
+        <li><a href="/demo/sparkpro/">Demo page</a></li>
+        <li><a href="/get-started/?plan=founding">Get started</a></li>
+      </ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a data-wa="default" href="/contact/">WhatsApp</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom"><span>© <span data-year>2026</span> <span data-cfg="legalName">Local Lead Machine</span></span><span>No fake reviews. No ranking guarantees. Just a better path to “contact us”.</span></div>
+  </div>
+</footer>
+<div class="mbar no-print" role="region" aria-label="Quick contact">
+  <a class="btn btn-wa" data-wa="default" href="/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.6 1.9 3.6 4.4 4.6l1-1.1 1.8.8-.4 1.6c-3.6.4-7.6-3.4-7.2-6.9L10 8l.8 1.7z"/></svg>WhatsApp</a>
+  <a class="btn btn-ghost" data-call hidden href="/contact/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+  <a class="btn btn-primary" data-call-fallback href="/audit/">Free audit</a>
+</div>
+<script src="/config.js"></script>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/onboard.js" defer></script>
+</body>
+</html>
