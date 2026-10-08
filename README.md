@@ -77,3 +77,12 @@ Don't run `scripts/build-config.mjs` on your source copy without `SITE_URL` — 
 - Tracker/launch data are per-browser (export CSV for backup). No login on internal pages.
 - No online payment by design — payment is arranged manually.
 - The founding "first 3" limit is stated, not enforced by software.
+
+## Customer onboarding (after payment)
+
+1. PayFast returns the customer to `/paid/` → they fill in `/onboard/` (details, logo, photos).
+2. `/api/intake-notify` triggers a rebuild; `scripts/build-customers.mjs` creates their draft at `/c/draft-<submissionId>/`.
+3. A scheduled task sends Jean a summary every morning at 05:45 (new intakes with draft links, leads, audits).
+4. Jean checks payment in PayFast, sends the customer the preview, then asks Claude to "approve <business>" → the id goes into `customers/approved.json` and the page moves to `/c/<slug>/`.
+
+Required Netlify environment variables for this: `NETLIFY_API_TOKEN` (personal access token, secret) and `BUILD_HOOK_URL` (a build hook for the main branch).
