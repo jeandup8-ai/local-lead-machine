@@ -50,6 +50,8 @@
     Promise.all([prep(logo, 600, 0.9)].concat(photos.map(function (p) { return prep(p, 1400, 0.8); }))).then(function (items) {
       var fd = new FormData();
       new FormData(form).forEach(function (v, k) { if (typeof v === "string") fd.append(k, v.trim().slice(0, 1500)); });
+      var report = ["v2", "selected=" + photos.length + (logo ? "+logo" : "")].concat(photos.map(function (p, i) { var it = items[i + 1]; return "p" + (i + 1) + ":" + (p.type || "notype") + ":" + Math.round(p.size / 1024) + "KB->" + (it ? Math.round(it.blob.size / 1024) + "KB" : "fail"); })).join(" ");
+      fd.set("upload_report", report.slice(0, 500));
       if (items[0]) fd.append("logo", items[0].blob, "logo" + items[0].name); else if (logo) skipped++;
       var total = 0;
       items.slice(1).forEach(function (it, i) {

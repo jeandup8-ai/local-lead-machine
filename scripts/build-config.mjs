@@ -51,6 +51,7 @@ for (const file of walk(root)) {
     const v = get(key);
     return v ? open + esc(v) + close : m;
   });
+  s = s.replace(/__V__/g, (env.COMMIT_REF || String(Date.now())).slice(0, 8));
   if (siteUrl) s = s.replace(/__SITE_URL__/g, siteUrl);
   else {
     s = s.replace(/^.*__SITE_URL__.*\n?/gm, (line) => (/(canonical|og:url|og:image|twitter:image)/.test(line) ? "" : line));
