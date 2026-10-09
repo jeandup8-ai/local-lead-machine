@@ -236,31 +236,36 @@ async function checkLinks(urls) {
 
 const json = (status, data) => new Response(JSON.stringify(data), { status, headers: { "content-type": "application/json", "cache-control": "no-store", "x-content-type-options": "nosniff" } });
 
+// Reusable: scan one public website and return plain signals (used by /api/scan and the prospect engine)
+export async function scanSite(url, { businessName = "", city = "", checkLinks: doLinks = true } = {}) {
+  businessName = String(businessName || "").slice(0, 120);
+  city = String(city || "").slice(0, 80);
+  try {
+    const u = normaliseUrl(url);
+    const r = await safeFetch(u);
+    if (r.res.status >= 400) return { ok: false, reachable: true, status: r.res.status, error: `The website returned an error (HTTP ${r.res.status}).` };
+    const signals = analyzeHtml(r.text, { finalUrl: r.finalUrl.href, businessName, city });
+    const links = doLinks ? await checkLinks(signals.internalLinks) : { checked: 0, broken: [] };
+    delete signals.internalLinks;
+    return {
+      ok: true, requestedUrl: u.href, finalUrl: r.finalUrl.href, https: r.finalUrl.protocol === "https:",
+      status: r.res.status, responseMs: r.totalMs, htmlBytes: r.bytes, truncated: r.truncated,
+      links, signals, scannedAt: new Date().toISOString(),
+    };
+  } catch (e) {
+    if (e instanceof UserError) return { ok: false, reachable: false, error: e.message };
+    console.error("scan error", e);
+    return { ok: false, reachable: false, error: "Something went wrong while checking that website." };
+  }
+}
+
 export default async (req, context) => {
   if (req.method !== "POST") return json(405, { error: "Use POST." });
   const ip = context?.ip || req.headers.get("x-nf-client-connection-ip") || "unknown";
   if (rateLimited(ip)) return json(429, { error: "Too many audits from this connection. Please wait a few minutes." });
   let body;
   try { body = await req.json(); } catch { return json(400, { error: "Invalid request." }); }
-  const businessName = String(body.businessName || "").slice(0, 120);
-  const city = String(body.city || "").slice(0, 80);
-  try {
-    const u = normaliseUrl(body.url);
-    const r = await safeFetch(u);
-    if (r.res.status >= 400) return json(200, { ok: false, reachable: true, status: r.res.status, error: `The website returned an error (HTTP ${r.res.status}).` });
-    const signals = analyzeHtml(r.text, { finalUrl: r.finalUrl.href, businessName, city });
-    const links = await checkLinks(signals.internalLinks);
-    delete signals.internalLinks;
-    return json(200, {
-      ok: true, requestedUrl: u.href, finalUrl: r.finalUrl.href, https: r.finalUrl.protocol === "https:",
-      status: r.res.status, responseMs: r.totalMs, htmlBytes: r.bytes, truncated: r.truncated,
-      links, signals, scannedAt: new Date().toISOString(),
-    });
-  } catch (e) {
-    if (e instanceof UserError) return json(200, { ok: false, reachable: false, error: e.message });
-    console.error("scan error", e);
-    return json(200, { ok: false, reachable: false, error: "Something went wrong while checking that website." });
-  }
+  return json(200, await scanSite(body.url, { businessName: body.businessName, city: body.city }));
 };
 
 export const config = { path: "/api/scan" };

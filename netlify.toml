@@ -46,3 +46,7 @@
   for = "/onboard/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+[[headers]]
+  for = "/queue/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

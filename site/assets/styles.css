@@ -364,3 +364,5 @@ p{margin:0 0 1em}
 .legal p,.legal li{color:#3a4254}
 .field label.check{display:flex;font-weight:600}
 @media(max-width:639px){.demo-sv{grid-template-columns:1fr 1fr}.demo-sv .card{padding:14px}.demo-sv .card p{font-size:.88rem}}
+.toolbar .btn.on{background:var(--ink);color:#fff;box-shadow:none}.toolbar .btn span:not(:empty){opacity:.7;margin-left:2px}
+.prospect-card .btn-row{gap:6px}.prospect-card .btn-row .btn{flex:0 0 auto}

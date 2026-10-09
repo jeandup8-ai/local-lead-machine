@@ -86,3 +86,13 @@ Don't run `scripts/build-config.mjs` on your source copy without `SITE_URL` — 
 4. Jean checks payment in PayFast, sends the customer the preview, then asks Claude to "approve <business>" → the id goes into `customers/approved.json` and the page moves to `/c/<slug>/`.
 
 Required Netlify environment variables for this: `NETLIFY_API_TOKEN` (personal access token, secret) and `BUILD_HOOK_URL` (a build hook for the main branch).
+
+## Prospect engine (runs by itself)
+
+- `netlify/functions/engine-scheduled.mjs` runs hourly on Netlify. Each run either searches Google Maps for one trade + area
+  (max 8 searches/day) or audits up to 3 waiting websites, and adds qualifying businesses (4.0+ stars, 10+ reviews,
+  no website or audit score ≤ 70) to the day's queue — max 25/day. Already-seen businesses are never repeated.
+- Messages are built only from Google data + audit results. Sending is one-to-one from the business WhatsApp (`/queue/`).
+- Env vars: `GOOGLE_PLACES_API_KEY` (Google Cloud project on the business Google account, Places API (New) enabled,
+  key restricted to that API), `ADMIN_KEY` (opens `/queue/#k=<key>`).
+- Data lives in Netlify Blobs store `prospects`.
