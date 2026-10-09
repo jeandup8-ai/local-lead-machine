@@ -64,7 +64,9 @@
     var pct = r.total / 100, circ = 439.8;
     var col = r.total >= 80 ? "#2BD9F4" : r.total >= 55 ? "#FFB547" : "#FF6B5B";
     var nvNote = r.nvPoints > 0 ? "<p><b>" + r.nvPoints + " of 100 points couldn't be verified automatically</b> and are scored as 0 until checked. " + (scan && !scan.ok ? esc(cap(scan.error)) : "") + "</p>" : "";
-    var waMsg = LLM.fill(C.messages.audit, { business: d.business || "my business", score: String(r.total) });
+    var waMsg = LLM.fill(C.messages.audit, { business: d.business || "my business", score: String(r.total) }) +
+      (r.top3.length ? "\n\nBiggest issues:\n" + r.top3.map(function (c, i) { return (i + 1) + ". " + c.label; }).join("\n") : "") +
+      (d.website ? "\nWebsite: " + d.website : "");
     var wa = LLM.waLink(waMsg);
     var phone = (C.phoneNumber || "").trim();
 
